@@ -22,7 +22,15 @@ const JobsCard = ({ job }) => {
                     {title}
                     <div className="badge badge-secondary">NEW</div>
                 </h2>
-                <p>Salary : {salaryRange.min} - {salaryRange.max} {salaryRange.currency}</p>
+                {/* <p>Salary : {salaryRange.min} - {salaryRange.max} {salaryRange.currency}</p> */}
+                 {/* <p>Salary: {salaryRange.min} - {salaryRange.max} {salaryRange.currency}</p> */}
+                <p>{description}</p>
+                <p>
+  Salary: {salaryRange?.min !== undefined && salaryRange?.max !== undefined
+    ? `${salaryRange.min} - ${salaryRange.max} ${salaryRange.currency || ''}`
+    : 'Not specified'}
+</p>
+
                 <p>{description}</p>
                 <div className="card-actions ">
                     {

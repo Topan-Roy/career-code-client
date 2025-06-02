@@ -11,6 +11,9 @@ import JobDaleils from '../Pages/JobDaleils';
 import PrivetRoutes from '../Routes/PrivetRoutes';
 import JobApply from '../Pages/JobApply';
 import MyApplications from '../Pages/MyApplications';
+import AddJob from '../Pages/AddJobs/AddJob';
+import MypostedJobs from '../Pages/MypostedJobs/MypostedJobs';
+import ViewApplications from '../Pages/ViewApplications/ViewApplications';
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -32,6 +35,19 @@ export const router = createBrowserRouter([
         {
           path:'myapplication',
           element:<PrivetRoutes><MyApplications></MyApplications></PrivetRoutes>
+        },
+        {
+          path:'addjob',
+          element:<PrivetRoutes><AddJob></AddJob></PrivetRoutes>
+        },
+        {
+          path:'mypostedjobs',
+          element:<PrivetRoutes><MypostedJobs></MypostedJobs></PrivetRoutes>
+        },
+        {
+          path:'applications/:job_id',
+          element:<PrivetRoutes><ViewApplications></ViewApplications></PrivetRoutes>,
+          loader:({params})=>fetch(`http://localhost:3000/applications/job/${params.job_id}`)
         },
         {
         path:"register",
