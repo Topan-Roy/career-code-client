@@ -6,12 +6,13 @@ import { myApplicationPromice } from '../API/ApplicationAPI';
 
 const MyApplications = () => {
     const {user}=useAuth();
+    console.log('token firebase token',user.accessToken)
     return (
         <div>
             <ApplicationStat></ApplicationStat>
             <Suspense fallback={<span className="loading loading-bars loading-lg"></span>}>
                  <ApplicationList
-                  myApplicationPromice={myApplicationPromice(user.email)}
+                  myApplicationPromice={myApplicationPromice(user.email,user.accessToken)}
                   ></ApplicationList>
             </Suspense>
            
