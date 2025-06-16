@@ -25,7 +25,7 @@ const AddJob = () => {
         newJob.status = 'active';
         console.log(newJob)
         // save job to the data base
-        axios.post('http://localhost:3000/jobs', newJob)
+        axios.post('https://career-code-server-neon-mu.vercel.app/jobs', newJob)
             .then(res => {
                 if (res.data.insertedId) {
                     Swal.fire({

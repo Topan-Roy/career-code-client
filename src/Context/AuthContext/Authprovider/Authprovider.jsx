@@ -30,7 +30,7 @@ const signInWithGoogle=()=>{
                 setLoading(false);
                 if(currentUser?.email){
                     // const userData={email:currentUser.email};
-                    axios.post('http://localhost:3000/jwt',{email:currentUser.email},{
+                    axios.post('https://career-code-server-neon-mu.vercel.app/jwt',{email:currentUser.email},{
                         withCredentials:true
                     })
                     .then(res=>{

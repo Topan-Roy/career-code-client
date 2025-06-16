@@ -25,7 +25,7 @@ export const router = createBrowserRouter([
         },
         {
           path:'/job/:id',
-          loader:({params})=>fetch(`http://localhost:3000/jobs/${params.id}`),
+          loader:({params})=>fetch(`https://career-code-server-neon-mu.vercel.app/jobs/${params.id}`),
           Component:JobDaleils
         },
         {
@@ -47,7 +47,7 @@ export const router = createBrowserRouter([
         {
           path:'applications/:job_id',
           element:<PrivetRoutes><ViewApplications></ViewApplications></PrivetRoutes>,
-          loader:({params})=>fetch(`http://localhost:3000/applications/job/${params.job_id}`)
+          loader:({params})=>fetch(`https://career-code-server-neon-mu.vercel.app/applications/job/${params.job_id}`)
         },
         {
         path:"register",

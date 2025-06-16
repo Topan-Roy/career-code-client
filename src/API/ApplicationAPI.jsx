@@ -1,5 +1,5 @@
 export const myApplicationPromice=(email,accessToken)=>{
-    return fetch(`http://localhost:3000/applications?email=${email}`,{
+    return fetch(`https://career-code-server-neon-mu.vercel.app/applications?email=${email}`,{
         credentials:'include',
         headers:{
            authorization:`Berrer${accessToken}`
